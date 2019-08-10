@@ -1,0 +1,30 @@
+<ons-page id="gallery">
+  <style>
+    .gallery-image {
+      width: 100%;
+    }
+  </style>
+
+  <script>
+  </script>
+
+  <ons-toolbar id="picture-toolbar">
+    <div class="center">Gallery</div>
+    <div class="left">
+      <ons-back-button></ons-back-button>
+    </div>
+  </ons-toolbar>
+
+  <ons-carousel id="carousel" fullscreen swipeable auto-scroll auto-scroll-ratio="0.1">
+    <ons-carousel-item style="background-color: #085078;">
+      <div style="text-align: center; font-size: 30px; margin-top: 20px; color: #fff;">
+        <img src='imgs/shackletonicon.jpg'>
+      </div>
+    </ons-carousel-item>
+    <ons-carousel-item style="background-color: #373B44;">
+      <div style="text-align: center; font-size: 30px; margin-top: 20px; color: #fff;">
+        <img src='imgs/shackletonicon.jpg'>
+      </div>
+    </ons-carousel-item>
+  </ons-carousel>
+</ons-page>

@@ -1,0 +1,53 @@
+<ons-page id="DC">
+<script>
+function add_text()
+{
+  var nme = document.getElementById("my_name").value
+  localStorage.setItem("FirstName", nme);
+}
+
+function alert_text() 
+{
+ ans_1 = localStorage.getItem("FirstName");
+ document.getElementById("ans_name").innerHTML = "Your name is " + ans_1
+};
+
+</script>
+
+<script>
+
+ons.ready(function() 
+{
+});
+
+function snapPicture () 
+ {
+  navigator.camera.getPicture (successCallback, FailCallback, {destinationType: Camera.DestinationType.DATA_URL});
+
+  //Success Callback
+  function successCallback (imageData)
+  {
+    //Display image
+    var image = document.getElementById ('myImage');
+    image.src = "data:image/jpeg;base64, " + imageData;
+  }
+
+  //Error CallBack
+  function FailCallback (message) 
+  {
+    alert ('Error!!!: ' + message);
+  }
+};
+
+</script>
+
+<h3>Dulwich College</h3>
+<p>Ernest Shackleton is one of the most famous alumni of Dulwich College. The College is situated in South London, the icon main building of which was designed by Charles Barry. </p>
+Write you name in here:
+<p> <input type='text' id='my_name'> <button onClick='add_text()'>Save</button></p>
+<p> <button onClick='alert_text()'>Recover</button></p>
+<p id='ans_name'>  </p>
+
+<button id = "cameraTakePicture" onClick = 'snapPicture()'>TAKE PICTURE</button>
+<img id = "myImage" height="70px"></img>
+</ons-page>

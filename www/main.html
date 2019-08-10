@@ -1,0 +1,23 @@
+<ons-page id="main">
+  <script>
+
+  document.addEventListener('prechange', ({ target, tabItem }) => {
+  if (target.matches('#tabbar')) {
+
+    document.querySelector('#main-toolbar .center').innerHTML = tabItem.getAttribute('label');
+  }
+});
+
+</script>
+  <ons-toolbar id="main-toolbar">
+    <div class="center">Dulwich College</div>
+    <div class="left">
+  <ons-back-button></ons-back-button>
+  </div>
+  </ons-toolbar>
+
+<ons-tabbar id="tabbar">
+<ons-tab page="DC.html" label="Dulwich College"></ons-tab>
+<ons-tab page="JamesCaird.html" label="James Caird"></ons-tab>
+</ons-tabbar>
+ </ons-page>

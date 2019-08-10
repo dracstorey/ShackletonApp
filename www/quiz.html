@@ -1,0 +1,20 @@
+<ons-page id="DC">
+<script>
+  function chk_ans()
+  {
+	  my_elem = document.getElementById('ans');
+	  my_elem.innerHTML = 'Ans: 800 nautical miles';
+	  my_elem.style.color = 'red';
+  }
+</script>
+  <ons-toolbar>
+    <div class="center">Quiz</div>
+    <div class="left">
+  <ons-back-button></ons-back-button>
+</div>
+  </ons-toolbar>
+<h3>Quiz</h3>
+<p>Question: How far (according to Shackleton's wikipedia page) is it from Elephant Island to South Georgia in Nautical Miles?</p>
+<p> <span class="myquote" id="ans"></span></p>
+<p> <button onClick='chk_ans()'>Check answer</button></p>
+</ons-page>
