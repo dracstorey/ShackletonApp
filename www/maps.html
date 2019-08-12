@@ -1,31 +1,16 @@
-<ons-page id='maps'>
-        <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-     
-    </style>
-
-
-    <p> Other stuff above here </p>
-    <div id="map"  style='height:200px'></div>
-    
-
-<script>
-document.addEventListener('init', function(event) {
-  if (event.target.matches('#maps')) {
-    var map;
-    function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-        });
+  <ons-page id="maps">
+     <ons-button modifier="large" onCLick="loadScript(function() {setTimeout(function(){var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -34.397, lng: 150.644},
+        zoom: 8}); }, 2000);})">Click to see map and add location</ons-button>
+     <div id="map" style="height:300px"></div>
+     <script>
+      function loadScript(callback) 
+      {
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDW-HwkM6q2uTCDGCky01IgKwzIMxwjfJ4';
+      document.getElementById("maps").appendChild(script);
+      callback();
       };
-  }
-}, false);
-</script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDW-HwkM6q2uTCDGCky01IgKwzIMxwjfJ4&callback=initMap"
-    async defer></script>
+      </script>
     </ons-page>
